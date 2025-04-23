@@ -1,15 +1,25 @@
 import React from "react";
 import blogData from "../data/blog";
+import Header from "./Header";
+import About from "./About";
+import ArticleList from "./ArticleList";
+
 
 console.log(blogData);
 
 function App() {
-  return (
-    <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
-    </div>
-  );
+const blogName = blogData.name;
+const blogImage = blogData.image;
+const blogAbout = blogData.about;
+const blogPosts = blogData.posts;
+
+return (
+<div className="App">
+<Header name={blogName} />
+<About image={blogImage} about={blogAbout} />
+<ArticleList posts={blogPosts} />
+</div>
+);
 }
 
 export default App;
